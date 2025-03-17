@@ -1,0 +1,370 @@
+/* General Reset */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    background-color: #f9f9f9;
+}
+
+/*============= NAVIGATION MENU ==========*/
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav .logo h1 {
+    font-weight: 700;
+    font-size: 28px;
+    color: #222;
+}
+
+.nav .logo b {
+    color: orangered;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-right: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 17px;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+}
+
+.nav ul li a:hover,
+.nav ul .active {
+    color: orangered;
+    font-weight: 600;
+}
+
+/* Active Underline */
+.nav ul .active::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: orangered;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+/*============= BUTTONS ==========*/
+input {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.signin {
+    background: transparent;
+    border: 2px solid orangered;
+    color: orangered;
+}
+
+.signin:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.signup {
+    background-color: orangered;
+    color: white;
+    border: 2px solid orangered;
+}
+
+.signup:hover {
+    background-color: white;
+    color: orangered;
+}
+
+/*============= HERO SECTION (CONTENT) ==========*/
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 150px;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Left Side Content */
+.content-left {
+    max-width: 100%;
+}
+
+.content-left .info h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.content-left .info p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Hero Button */
+.content-left button {
+    padding: 12px 25px;
+    background-color: orangered;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.content-left button:hover {
+    background-color: #ff5722;
+}
+
+/* Right Side Image */
+.content-right img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*============= POPULAR DISHES CARDS ==========*/
+.category {
+    width: 100%;
+    padding: 80px 100px;
+}
+
+.list-items {
+    width: 100%;
+    text-align: center;
+}
+
+.list-items h3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card-list .card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-list .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-list .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #eee;
+}
+
+.food-title h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #222;
+}
+
+.desc-food p {
+    font-size: 16px;
+    color: #666;
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.price span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e44d26;
+    margin-top: 10px;
+    background: rgba(228, 77, 38, 0.1);
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* Service Section */
+.services {
+    padding: 80px 50px;
+    background-color: #f9f9f9;
+    margin-top: 120px;
+}
+
+.service-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.service-container h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+.service-container h2 span {
+    color: orangered;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .service-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        padding: 30px 50px;
+    }
+
+    .content-left h2 {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        margin-top: 60px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .nav .logo h1 {
+        font-size: 24px;
+    }
+
+    .content-left h2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-container h2 {
+        font-size: 24px;
+    }
+}

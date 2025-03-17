@@ -1,0 +1,264 @@
+/* General Reset */
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: #f9f9f9;
+    margin-top: 80px; /* Ensuring no content overlaps with the fixed nav */
+}
+
+/*============= NAVIGATION MENU ==========*/
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav .logo h1 {
+    font-weight: 700;
+    font-size: 28px;
+    color: #222;
+}
+
+.nav .logo b {
+    color: orangered;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-right: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 17px;
+    transition: color 0.3s ease-in-out;
+    padding: 8px 12px;
+}
+
+.nav ul li a:hover,
+.nav ul .active {
+    color: orangered;
+    font-weight: 600;
+}
+
+/* Active Underline */
+.nav ul .active::after {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: orangered;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+/*============= CONTACT SECTION ==========*/
+.contact {
+    padding: 80px 50px;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button.submit-btn {
+    padding: 12px 25px;
+    background-color: orangered;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button.submit-btn:hover {
+    background-color: #ff5722;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .contact-info, .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form button.submit-btn {
+        width: 100%;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .nav .logo h1 {
+        font-size: 24px;
+    }
+}
+/*============= BUTTONS ==========*/
+input {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px; /* Ensures consistent font size */
+}
+
+/* Sign In Button */
+.signin {
+    background: transparent;
+    border: 2px solid orangered;
+    color: orangered;
+}
+
+.signin:hover {
+    background-color: orangered;
+    color: white;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+/* Sign Up Button */
+.signup {
+    background-color: orangered;
+    color: white;
+    border: 2px solid orangered;
+}
+
+.signup:hover {
+    background-color: white;
+    color: orangered;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+/* Ensure proper spacing between buttons in the nav bar */
+.nav input {
+    margin-left: 10px;
+}
+
+/* Optional: Add a margin-bottom to make the buttons feel more balanced with the page */
+.nav input:last-child {
+    margin-right: 0;
+}
